@@ -15,11 +15,11 @@ def roll_dice():
 # Functie om de bijbehorende spelregel te tonen
 def show_rule(number):
     rules = {
-        1: "Je mag een stap vooruit zetten.",
-        2: "Je mag twee stappen vooruit zetten.",
-        3: "Doe een dansje!",
-        4: "Je bent een geluksvogel, sla een beurt over!",
-        5: "Wissel van plaats met een andere speler.",
+        1: "Je moet een dansje doen.",
+        2: "Je moet een liedje zingen.",
+        3: "Drop een griddy",
+        4: "sla een beurt over!",
+        5: "Doe een aap na.",
         6: "Je mag nog een keer gooien!"
     }
     
