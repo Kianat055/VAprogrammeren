@@ -8,7 +8,7 @@ class Raadspel:
         self.master = master
         self.master.title("Raadspel")
         self.master.geometry("300x150")
-        # Hier wordt een willekeurig getal gegenereerd 
+        # Hier wordt een willekeurig getal gegenereerd en dient het getal in.
 
         self.geheim_nummer = random.randint(1, 10)
         self.raad_label = tk.Label(self.master, text="Voer je gok in:")
@@ -19,7 +19,7 @@ class Raadspel:
 
         self.submit_button = tk.Button(self.master, text="Indienen", command=self.controleer_gok)
         self.submit_button.pack()
-
+    # Hier wordt de gok van de gebruiker gecontroleerd of het getal onder of boven het goede antwoord zit.
     def controleer_gok(self):
         gok = int(self.raad_entry.get())
 
