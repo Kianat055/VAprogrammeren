@@ -5,10 +5,10 @@ import random
 class Galgje:
     def __init__(self, master):
         self.master = master
-        self.master.title("Galgje")
+        self.master.title("Galgje") # titel van het spel
         
-        self.word_list = ["vuileaal", "hoi", "eentweekzegnee", "yippiejajee", "omg", "eyo", "WESTSIDE", "paling", "fakka", "caca"]
-        self.word = random.choice(self.word_list)
+        self.word_list = ["vuileaal", "hoi", "eentweekzegnee", "yippiejajee", "omg", "eyo", "WESTSIDE", "paling", "fakka", "caca"] # de woorden die te raden zijn
+        self.word = random.choice(self.word_list) # hiermee kiest het spel willekeurig een woord om te raden.
         self.guesses = []
 
         self.create_widgets()
@@ -33,10 +33,10 @@ class Galgje:
         self.entry.pack()
 
         self.submit_button = tk.Button(self.master, text="Submit", command=self.check_guess)
-        self.submit_button.pack()
+        self.submit_button.pack() # hiermee submit je een letter om te raden.
 
         self.restart_button = tk.Button(self.master, text="Restart", command=self.restart_game)
-        self.restart_button.pack()
+        self.restart_button.pack() # hiermee begin je het spel opnieuw.
 
     def draw_word(self):
         display_word = ""
@@ -47,20 +47,20 @@ class Galgje:
                 display_word += "_"
             display_word += " "
         self.word_label.config(text="Word: " + display_word)
-
+# hiermee visualiseer je het woord in de tkinter window.
     def check_guess(self):
         guess = self.entry.get().lower()
-        self.entry.delete(0, tk.END)
+        self.entry.delete(0, tk.END) # deze stukjes code kijken na hoeveel kansen de speler nog heeft.
         if len(guess) != 1 or not guess.isalpha():
-            messagebox.showerror("Invalid Guess", "Please enter a single alphabetical character.")
+            messagebox.showerror("Invalid Guess", "Please enter a single alphabetical character.") # deze code zorgt ervoor dat de speler maar een letter per keer raadt.
             return
         if guess in self.guesses:
-            messagebox.showinfo("Already Guessed", "You've already guessed that letter.")
+            messagebox.showinfo("Already Guessed", "You've already guessed that letter.") # deze code zorgt ervoor dat de speler niet dezelfde letter invoert.
             return
         self.guesses.append(guess)
         self.draw_word()
         if set(self.word) <= set(self.guesses):
-            messagebox.showinfo("Congratulations", f"You've guessed the word '{self.word}'!")
+            messagebox.showinfo("Congratulations", f"You've guessed the word '{self.word}'!") # deze code laat weten wanneer de speler het woord heeft geraden.
         elif len(set(self.guesses).difference(set(self.word))) >= 6:
             self.canvas.create_oval(230, 150, 270, 190, width=2) # head
             self.canvas.create_line(250, 190, 250, 270) # body
@@ -68,7 +68,7 @@ class Galgje:
             self.canvas.create_line(250, 220, 280, 250) # right arm
             self.canvas.create_line(250, 270, 220, 300) # left leg
             self.canvas.create_line(250, 270, 280, 300) # right leg
-            messagebox.showinfo("Game Over", f"Sorry, you've run out of guesses. The word was '{self.word}'.")
+            messagebox.showinfo("Game Over", f"Sorry, you've run out of guesses. The word was '{self.word}'.") #door deze code eindigt het spel.
         
     def restart_game(self):
         self.word = random.choice(self.word_list)
