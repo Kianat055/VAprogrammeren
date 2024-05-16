@@ -9,14 +9,13 @@ class Galgje:
         self.word_list = ["vuileaal", "hoi", "eentweekzegnee", "yippiejajee", "omg", "eyo", "WESTSIDE", "paling", "fakka", "caca"] # de woorden die te raden zijn
         self.word = random.choice(self.word_list) # hiermee kiest het spel willekeurig een woord om te raden.
         self.guesses = []
-#fakkafakkafakka
         self.create_widgets()
         self.draw_word() 
 
     def create_widgets(self):
         self.canvas = tk.Canvas(self.master, width=400, height=400)
         self.canvas.pack()
-#hoi
+
         self.canvas.create_line(50, 350, 200, 350) # base
         self.canvas.create_line(125, 350, 125, 100) # stand
         self.canvas.create_line(125, 100, 250, 100) # beam
@@ -27,7 +26,6 @@ class Galgje:
         self.guess_label.pack()
         self.entry = tk.Entry(self.master)
         self.entry.pack()
-
         self.submit_button = tk.Button(self.master, text="Submit", command=self.check_guess)
         self.submit_button.pack() # hiermee submit je een letter om te raden.
 
