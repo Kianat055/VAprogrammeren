@@ -9,7 +9,7 @@ class Galgje:
         self.word_list = ["vuileaal", "hoi", "eentweekzegnee", "yippiejajee", "omg", "eyo", "WESTSIDE", "paling", "fakka", "caca"] # de woorden die te raden zijn
         self.word = random.choice(self.word_list) # hiermee kiest het spel willekeurig een woord om te raden.
         self.guesses = []
-
+#fakkafakkafakka
         self.create_widgets()
         self.draw_word() 
 
