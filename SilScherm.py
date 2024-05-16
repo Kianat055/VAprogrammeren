@@ -1,7 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
 import random
-
 class Galgje:
     def __init__(self, master):
         self.master = master
@@ -12,23 +11,20 @@ class Galgje:
         self.guesses = []
 
         self.create_widgets()
-        self.draw_word()
+        self.draw_word() 
 
     def create_widgets(self):
         self.canvas = tk.Canvas(self.master, width=400, height=400)
         self.canvas.pack()
-
+#hoi
         self.canvas.create_line(50, 350, 200, 350) # base
         self.canvas.create_line(125, 350, 125, 100) # stand
         self.canvas.create_line(125, 100, 250, 100) # beam
         self.canvas.create_line(250, 100, 250, 150) # rope
-
         self.word_label = tk.Label(self.master, text="Word: ")
         self.word_label.pack()
-
         self.guess_label = tk.Label(self.master, text="Guesses: ")
         self.guess_label.pack()
-
         self.entry = tk.Entry(self.master)
         self.entry.pack()
 
