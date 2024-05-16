@@ -1,6 +1,8 @@
 import tkinter as tk
 import random
 
+# hoi
+
 # Functie om de dobbelsteen te rollen en de bijbehorende spelregel te tonen
 def roll_dice():
     # Genereer een willekeurig getal tussen 1 en 6 voor de dobbelsteen
