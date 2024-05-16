@@ -5,7 +5,7 @@ class Galgje:
     def __init__(self, master):
         self.master = master
         self.master.title("Galgje") # titel van het spel
-        
+        #hallo
         self.word_list = ["vuileaal", "hoi", "eentweekzegnee", "yippiejajee", "omg", "eyo", "WESTSIDE", "paling", "fakka", "caca"] # de woorden die te raden zijn
         self.word = random.choice(self.word_list) # hiermee kiest het spel willekeurig een woord om te raden.
         self.guesses = []
